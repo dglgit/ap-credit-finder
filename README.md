@@ -8,10 +8,10 @@ all data retrieved from collegeboard find credit database(https://apstudents.col
 
 in python terminal you can do: 
 
-`python 
+```python 
 >>> from processor import *
 >>> 
-`
+```
 and use the built in functions to search by college or ap class
 
 too lazy to document search functions hehe just look at `processor.py`
