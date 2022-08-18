@@ -15,4 +15,4 @@ and use the built in functions to search by college or ap class
 
 too lazy to document search functions hehe just look at `processor.py`
 
-to add more college data go to the collegeboard credit database and download csv file of the table. then move the file to ./data and run `python processor.py` again to update `catted.csv`
+to add more college data go to the collegeboard credit database and download csv file of the table. then move the file to `./data` and run `python processor.py` again to update `catted.csv`

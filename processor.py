@@ -46,17 +46,21 @@ def makeBigDf():
     dfs=[]
     names=[]
     for f in files:
-        df, school=readFile(prefix+f)
-        #print(df.columns)
-        school=school.lower()
-        df=df[['Exam Name','Minimum Score Required']].set_index('Exam Name')
-        df.index=df.index.str.lower()
-        df=df.rename(columns={"Minimum Score Required":school})
+        try:
+            df, school=readFile(prefix+f)
+            #print(df.columns)
+            school=school.lower()
+            df=df[['Exam Name','Minimum Score Required']].set_index('Exam Name')
+            df.index=df.index.str.lower()
+            df=df.rename(columns={"Minimum Score Required":school})
 
-        df=handle_multiple(df)
-        dfs.append(df)
-        names.append(school)
-        #print(df)
+            df=handle_multiple(df)
+            dfs.append(df)
+            names.append(school)
+            #print(df)
+        except Exception as e:
+            print(f)
+            print(e)
     catted=pd.concat(dfs,axis=1, sort=True)
     catted.to_csv("catted.csv")
     print(catted)
